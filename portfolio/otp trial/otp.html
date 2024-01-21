@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment System</title>
+</head>
+<body>
+    <h1>Please select a payment method:</h1>
+    <button onclick="payWithMPesa()" >MPesa</button>
+    <button onclick="payWithPaypal()">Paypal</button>
+    <button onclick="payWithCard()">Debit/Master/Visa Card</button>
+
+    <script>
+        // Check if the user has already paid
+        if (localStorage.getItem('paid') === 'true') {
+            // Redirect the user to the website/services
+            window.location.href = '/website';
+        }
+
+        // Function to handle payment with MPesa
+        function payWithMPesa() {
+            // Simulate payment processing
+            setTimeout(function() {
+                // Payment successful
+                localStorage.setItem('paid', 'true');
+                // Generate and display the link
+                var link = '/link?deviceId=' + localStorage.getItem('deviceId');
+                alert('Payment successful. Your link is: ' + link);
+                // Open the link in a new window
+                window.open(link);
+            }, 2000);
+        }
+
+        // Function to handle payment with Paypal
+        function payWithPaypal() {
+            // Simulate payment processing
+            setTimeout(function() {
+                // Payment successful
+                localStorage.setItem('paid', 'true');
+                // Generate and display the link
+                var link = '/link?deviceId=' + localStorage.getItem('deviceId');
+                alert('Payment successful. Your link is: ' + link);
+                // Open the link in a new window
+                window.open(link);
+            }, 2000);
+        }
+
+        // Function to handle payment with Debit/Master/Visa Card
+        function payWithCard() {
+            // Simulate payment processing
+            setTimeout(function() {
+                // Payment successful
+                localStorage.setItem('paid', 'true');
+                // Generate and display the link
+                var link = '/link?deviceId=' + localStorage.getItem('deviceId');
+                alert('Payment successful. Your link is: ' + link); vbnet
+// Open the link in a new window
+window.open(link);
+}, 2000); }
+
+// Check if the user has already paid when the page loads window.onload = function() { if (localStorage.getItem('paid') === 'true') { // Redirect the user to the website/services window.location.href = '/website'; } };
+
+// Generate a unique device ID for the user if (localStorage.getItem('deviceId') === null) { localStorage.setItem('deviceId', Math.random().toString(36).substring(2)); }
+
+// Verify the device ID when the user enters the link var linkInput = document.createElement('input'); linkInput.type = 'text'; linkInput.id = 'link_input'; linkInput.placeholder = 'Enter link'; document.body.appendChild(linkInput); linkInput.addEventListener('input', function() { var link = linkInput.value; if (link.startsWith('/link?deviceId=' + localStorage.getItem('deviceId'))) { // Verify the link on the server var xhr = new XMLHttpRequest(); xhr.open('POST', '/verify_link'); xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); xhr.onload = function() { if (xhr.status === 200) { // Link verified // Redirect the user to the website/services window.location.href = '/website'; } else { alert('Error verifying link'); } }; xhr.send('link=' + link); } else { alert('Invalid link'); } });
+</script>
+<script src="ot"></script>
+
+</body>
+</html> 

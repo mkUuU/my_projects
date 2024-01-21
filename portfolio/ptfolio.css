@@ -1,0 +1,143 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' , sans-serif;
+    background-color: #09001a;
+}
+body
+{
+    color: #ededed;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+}
+h1 {
+    color: #00feba; 
+    letter-spacing: .2rem;
+    
+}
+p{
+   width: 80%;
+   text-align: left;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   letter-spacing: normal;
+}
+#typewriter {
+    white-space: nowrap;
+    font-size: 24px;
+    border-right: 20x solid #ffffff;
+    width: min-content;
+    animation: blink-caret 1s step-end infinite;
+}
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #ffffff;
+        }
+        }
+        
+img {
+    max-width: 15%;
+    filter: drop-shadow(0 0 8px #14efff);
+    border-radius: 50%;
+    position: absolute;
+    right: 5%;
+    bottom: 40%;
+}
+.logo { 
+    position: relative;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.navbar a {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 450;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: .3s;
+}
+.navbar a:hover {
+    color: #000000;
+    transform: translateY(-6px) scale(1.2);
+    background: #9f9a9a;
+    border-radius: 20px;
+    padding: 6px 15px;
+    font-size: 1em;
+
+}
+.download {
+    color: #fff;
+    background-color: #000000;    
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 8px 20px;
+    border: 2px;
+    transition: all .3s ease-in-out;
+    font-size: 1.2em;
+    line-height: 1.5;
+    display: inline-block;
+    justify-content: space-between;
+    align-items: start;
+    text-decoration: none;
+}
+.download:hover{
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    transform: translateY(-6px) scale(.9);
+    color: #000;
+}
+.home {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    
+}
+.main-btn a
+{
+    color: #000;
+    background-color: #aec8c1;    
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 8px 20px;
+    border: 2px;
+    transition: all .3s ease-in-out;
+    font-size: 1.2em;
+    line-height: 1.5;
+    display: inline-flex;
+    justify-content: space-between;
+    text-decoration: none;
+}
+.main-btn a:hover{
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    transform: translateY(-6px) scale(.9);
+    color: #fff;
+}
+.medsos {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+
+}
+

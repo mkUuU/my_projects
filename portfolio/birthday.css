@@ -1,0 +1,106 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: all .2s ease-in-out;
+}
+body {
+    background:#6c63ff;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #000;
+}
+h1 {
+    text-align:center;
+}
+.card {
+    background: #fdfdfd;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 95vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+button {
+    color: #161414;
+    background: #a79408;
+    cursor: pointer;
+    transition: all .3s ease;
+    font-size: 18px;
+    border-radius: 20px;
+    background: transparent;
+    height: 30px;
+    display: inline-flex;
+    text-decoration: none;
+}
+button:hover {
+    color: #fff;
+    background: #161414;
+}
+
+
+.audio-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+  }
+  
+  .audio-player::-webkit-media-controls-panel {
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  .audio-player::-webkit-media-controls-play-button {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .audio-player::-webkit-media-controls-volume-slider {
+    background-color: #333;
+  }
+  
+  .audio-player::-webkit-media-controls-volume-slider-container {
+    background-color: #333;
+  }
+  
+  .audio-player::-webkit-media-controls-current-time-display {
+    color: #fff;
+  }
+  
+  .audio-player::-webkit-media-controls-time-remaining-display {
+    color: #fff;
+  }
+  
+  .audio-player::-webkit-media-controls-timeline {
+    background-color: #333;
+  }
+  
+  .audio-player::-webkit-media-controls-fullscreen-button {
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

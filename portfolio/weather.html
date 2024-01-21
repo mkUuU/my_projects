@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather.css">
+    <title>Weather Updates</title>
+    <link rel="shortcut icon" href="img/clutch.png" type="image/x-icon">
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" id="citySearch" placeholder="Enter city name" spellcheck="false">
+            <button class="search-icon">search</button>
+            
+        </div>
+        <div class="weather">
+            <img src="img/ra.png" class="weather-icon">
+            <h1 class="temp">20°C</h1>
+            <h2 class="city">Nairobi</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="img/hu.png" alt="">
+                    <span>Humidity: 65%</span>
+                </div>
+                <div class="col">
+                    <img src="img/wind.png" alt="">
+                    <span>Wind speed 12km/h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+const apiKey = "dc5d453122483b96988fd76727a47600";
+const apiUrl = "`api.openweathermap.org/data/2.5/weather?units=metric&q=city`;";
+
+const searchBox = document.querySelector(".search input");
+const searchBtn = document.querySelector(".search button");
+
+
+async function checkWeather(city) {
+  try {
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      document.querySelector(".city").textContent = data.name;
+      document.querySelector(".temp").textContent = Math.round(data.main.temp) + "°C";
+      document.querySelector(".humidity").textContent = data.main.humidity + "%";
+      document.querySelector(".wind").textContent = data.speed.wind + " km/h";
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+searchBtn.addEventListener("click", () => {
+  const searchBoxValue = searchBox.value.trim();
+  if (searchBoxValue.length > 0) {
+    checkWeather(searchBoxValue);
+  } else {
+    console.error("Please enter a city name");
+  }
+});
+
+    </script>
+</body>
+</html>
